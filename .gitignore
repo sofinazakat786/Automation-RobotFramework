@@ -1,0 +1,43 @@
+# Byte-compiled / Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+
+# Robot Framework outputs
+output.xml
+log.html
+report.html
+*.png
+*.jpg
+*.log
+*.txt
+
+# IDE files
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test result directories
+results/
+logs/
+
+# Pipenv, poetry, or other environments
+Pipfile.lock
+poetry.lock
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Misc
+*.bak
+*.swp
