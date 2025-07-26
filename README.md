@@ -1,7 +1,4 @@
 # Automation-RobotFramework
-<<<<<<< HEAD
-“This repository is dedicated to learning and experimenting with test automation using Robot Framework. It contains sample test suites, custom keywords, and automation workflows as I explore and refine my understanding of automation concepts and best practices.
-=======
 
 ## 📋 Project Overview
 This project contains automation scripts built using the **Robot Framework** for end-to-end testing of web applications and APIs.
@@ -31,4 +28,3 @@ Automation-RobotFramework/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
->>>>>>> f196616 (Initial commit with README and setup).
