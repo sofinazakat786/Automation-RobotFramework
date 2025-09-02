@@ -1,30 +1,36 @@
 *** Settings ***
-Documentation    To Validate the login form
-Library    SeleniumLibrary
-Resource    resource.robot
-Test Teardown    Close Browser session
+Documentation       To Validate the login form
+
+Library             SeleniumLibrary
+Resource            resource.robot
+
+Test Teardown       Close Browser Session
+
 
 *** Variables ***
-${shop_page_load}    css:.nav-link
+${SHOP_PAGE_LOAD}       css:.nav-link
 
 
 *** Test Cases ***
-# Validate Unsuccessful Login
-#     Open The Browser With Mortgage Payment URL
-#     Fill the login form    ${user_name}    ${invalid_password}
-#     Wait Until Element Is located in the page    ${Error_Message_Login}
-#     Verify error message is correct
-
-Validate Cards displayed in the Shopping Page
+Validate Unsuccessful Login
+    [Documentation]    Validates that login fails with invalid credentials and displays the correct error message.
     Open The Browser With Mortgage Payment URL
-    Fill the login form    ${user_name}    ${valid_password}
-    Wait Until Element Is located in the page    ${shop_page_load}
-    Verify Card Titles in the shop page
+    Fill The Login Form    ${user_name}    ${invalid_password}
+    Wait Until Element Is Located In The Page    ${Error_Message_Login}
+    Verify Error Message Is Correct
+
+Validate Cards Displayed In The Shopping Page
+    [Documentation]    Validates that cards are displayed correctly in the shopping page after successful login.
+    Open The Browser With Mortgage Payment URL
+    Fill The Login Form    ${user_name}    ${valid_password}
+    Wait Until Element Is Located In The Page    ${shop_page_load}
+    Verify Card Titles In The Shop Page
 
 
 *** Keywords ***
-Verify Card Titles in the shop page
-    @{expectedList} =     Create List    iphone X    Samsung Note 8   Nokia Edge    Blackberry
+Verify Card Titles In The Shop Page
+    [Documentation]    Verifies that the card titles are displayed correctly in the shop page.
+    # @{expectedList} =    Create List    iphone X    Samsung Note 8    Nokia Edge    Blackberry
     ${elements}    Get WebElements    css:.card-title
     FOR    ${element}    IN    @{elements}
         Log    ${element.text}
